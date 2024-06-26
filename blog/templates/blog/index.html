@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Meu blog{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock css_files %}
+
+{% block content %}
+
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/pablo.jpg" %}" alt="Autor do Blog"/>
+            <h2>Bem vindo ao meu blog!</h1>
+        </header>
+        <p>Bem findo ao meu blog, aqui contem informações de técnologias de todo mundo.</p> 
+    </section>
+    <section id="latest-posts">
+        <h2>Ultimas informações</h2>
+        <ul>
+            {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
+            {% include "blog/includes/post.html" %}
+        </ul>
+        
+    </section>
+
+    <section id="about">
+        <h2>O que eu faço.</h2>
+            <p>Descrção completa de informações sobre mim.</p>
+
+    </section>
+    
+{% endblock content %}
+
+
