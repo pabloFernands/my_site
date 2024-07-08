@@ -11,15 +11,68 @@
 {% block content %}
     <section id="summary">
         <h2>Titulo do post</h2>
+        <div>
+            {% for tags in post_tags %}
+                <span class="tag">{{ tags.caption }}</span>
+            {% endfor %}
+        </div>
+        <div id="read-later">
+            <form action={% url "read-later" %} method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ post.id }}" name="post_id">
+                <button>
+                    {% if saved_for_later %}
+                    Remover de "Ler depois"
+                    {% else %}
+                    Ler depois
+                    {% endif %}
+                </button>
+            </form>
+        </div>
+
         <article>
-            <img src="{% static "blog/images/"|add:posts.image %}" alt="{{ posts.title }}"/>
-            <address>{{ posts.author }}</address>
+            <img src="{{ post.image.url }}" alt="{{ post.title }}"/>
+            <address>Feito: <a href="mailto:{{posts.author.email_adress}}"> {{ posts.author }}</a></address>
             <div>
                 Atualizado em <time>{{ posts.date|date:"d M Y" }}</time>
             </div>
         </article>
     </section>
+    {% if comment_form.errors %}
+    <div id="alert">
+        <h2>Erro no formulário.</h2>
+        <p> Não foi posivel concluir o envio do fomuário, infoa errada.
+        <a href="#comment-form">Fixar</a>
+    </div>
+    {% endif %}
+
     <main>
-        <p>{{ posts.content }}</p>
+        <p>{{ post.Content | linebreaks }}</p>
     </main>
+
+    <section id="comments">
+        <ul>
+            {% for comment in post.comments.all %}
+                <li>
+                    <h2>{{ comment.user_name }}</h2>
+                    <p>{{ comment.text | linebreaks}}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="comment-form">
+        <h2> Comentário</h2>
+        <form action="{% url "post-detail-page" post.slug %}" method="POST">
+            {% csrf_token %}
+            {% for form_field in comment_form %}
+            <div class="form-control" {% if form_field.errors %}invaid{% endif %}>
+                {{ form_field.label_tag }}
+                {{ form_field }}
+                {{ form_field.errors }}
+            </div>
+            {% endfor %}
+            <button>Salvar</button>
+        </form>
+    </section>
 {% endblock %}
