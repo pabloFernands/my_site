@@ -10,6 +10,7 @@ html {
 
 body {
   margin: 0;
+  width: 100%vw;
 }
 
 h1,
@@ -46,4 +47,8 @@ h3 {
 #main-navigation h1 a:hover,
 #main-navigation h1 a:active {
   color: white;
+}
+
+@media(max-width: 380px){
+
 }
