@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Meu blog{% endblock title %}
+{% block title %}Pablo Blog{% endblock title %}
 
 {% block css_files %}
     <link rel="stylesheet" href="{% static "blog/post.css" %}">
@@ -13,9 +13,9 @@
     <section id="welcome">
         <header>
             <img src="{% static "blog/images/pablo.jpg" %}" alt="Autor do Blog"/>
-            <h2>Bem vindo ao meu blog!</h2>
+            <h2>Seja bem vindo!</h2>
         </header>
-        <p>Bem findo ao meu blog, aqui contem informações de técnologias de todo mundo.</p> 
+        <p>Esse site foi criado e configurado usando Django e o banco de dados utilizado foi Sqlite.</p> 
     </section>
     <section id="latest-posts">
         <h2>Ultimas informações</h2>
@@ -28,8 +28,8 @@
     </section>
 
     <section id="about">
-        <h2>O que eu faço.</h2>
-            <p>Posts atualizados.</p>
+        <h2>Mais infomações.</h2>
+            <p>Acesse:<a href="https://www.linkedin.com/in/pablo-fernandes-9b6559b3" target="_blank">Linkdin</a></p>
 
     </section>
     

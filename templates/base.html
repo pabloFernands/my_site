@@ -12,8 +12,13 @@
         {% block css_files %}{% endblock css_files %}
     </head>
     <body>
-        <header id="main-navigation">        
-            <h1><a href="{% url "starting-page" %}">Pablo Blog</a></h1>
+        <header id="main-navigation">
+            <div id="nome-titulo">
+                <a href="{% url "starting-page" %}">
+                <img src="{% static "blog/images/logo-removebg-preview.png" %}" alt="Autor do Blog" />
+                </a>
+                <h1 id="nome-site"><a href="{% url "starting-page" %}">Pablo Blog</a></h1>
+            </div>
             <nav>
                 <a href="{% url "read-later" %}">Post Salvos</a>
             <a href="{% url "posts-page" %}">Todos os posts</a>

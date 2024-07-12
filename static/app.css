@@ -20,6 +20,15 @@ h3 {
   font-weight: bold;
 }
 
+#nome-titulo {
+  display: flex;
+  
+}
+
+img{
+  height: 5rem;
+}
+
 #main-navigation {
   width: 100%;
   height: 5rem;
@@ -41,7 +50,7 @@ h3 {
 
 #main-navigation a:hover,
 #main-navigation a:active {
-  color: #cf79f1;
+  color: #16E81B;
 }
 
 #main-navigation h1 a:hover,

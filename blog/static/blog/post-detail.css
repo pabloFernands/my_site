@@ -3,7 +3,7 @@ body {
 }
 
 #main-navigation {
-  background-color: #390281;
+  background: linear-gradient(to right top, #000000, #053406);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -13,7 +13,7 @@ body {
   width: 90%;
   max-width: 90rem;
   border-radius: 16px;
-  background-color: #5706c0;
+  background: linear-gradient(to right top, #000000, #053406);
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   height: 22rem;
@@ -105,7 +105,7 @@ main {
 
 #comment-form button {
   font: inherit;
-  background-color: #390281;
+  background-color: #010063;
   color: white;
   border: 1px solid #390281;
   padding: 0.5rem 1.5rem;
@@ -115,7 +115,7 @@ main {
 
 #comment-form button:hover,
 #comment-form button:active {
-  background-color: #4f0ba7;
+  background-color: #0200A6;
   border-color: #4f0ba7;
 }
 

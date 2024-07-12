@@ -1,5 +1,5 @@
 #welcome {
-  background: linear-gradient(to right top, #6305dd, #390281);
+  background: linear-gradient(to right top, #000000, #053406);
   padding: 6rem 12%;
 }
 
@@ -31,6 +31,9 @@
 #welcome p {
   color: white;
   font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+  
 }
 
 #latest-posts {
@@ -61,15 +64,28 @@
 #about {
   text-align: center;
   padding: 3rem;
-  background-color: #e48900;
+  background: linear-gradient(135deg, #000000 5%, #010063);
   margin-top: 5rem;
 }
 
 #about h2 {
   font-size: 3rem;
+  color: white;
 }
 
 #about p {
   font-size: 1.5rem;
-  color: #353535;
+  color: white;
+}
+
+#about a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+#about a:hover,
+#about a:active {
+  color: #16E81B;
 }
